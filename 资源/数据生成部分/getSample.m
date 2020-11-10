@@ -102,7 +102,7 @@ sample_data = zeros(rows, NFeatures + 1);
         sample_data(row_r, NFeatures + 1) = 64;
     end
     
-filename=['digits\sample.dat'];
+filename=['digits/sample.dat'];
 dlmwrite(filename,sample_data,'delimiter','\t','newline','pc');
 
 %csvwrite('sample.txt', sample_data);

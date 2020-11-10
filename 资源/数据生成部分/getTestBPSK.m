@@ -38,6 +38,6 @@ snr = SNR(i);
     end 
 
 %% save
-filename=['digits\testBPSK-',num2str(snr),'.dat'];
+filename=['digits/testBPSK-',num2str(snr),'.dat'];
 dlmwrite(filename,test_data,'delimiter','\t','newline','pc');
 end

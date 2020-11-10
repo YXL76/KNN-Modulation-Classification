@@ -40,6 +40,6 @@ snr = SNR(i);
     end 
 
 %% save
-filename=['digits\testQPSK-',num2str(snr),'.dat'];
+filename=['digits/testQPSK-',num2str(snr),'.dat'];
 dlmwrite(filename,test_data,'delimiter','\t','newline','pc');
 end
