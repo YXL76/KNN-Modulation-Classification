@@ -36,8 +36,11 @@ for i = 1:length(SNR)
 
     for row = 1:rows
 
-        for i = 1:NFeatures
-            test_data(row, i) = cumulantsMat(row, i);
+        idx = 1;
+
+        while idx <= NFeatures
+            test_data(row, idx) = cumulantsMat(row, idx);
+            idx = idx + 1;
         end
 
     end
