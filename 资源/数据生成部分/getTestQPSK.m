@@ -42,6 +42,6 @@ for i = 1:length(SNR)
     end
 
     %% save
-    filename = ['digits/testQPSK-', num2str(snr), '.dat'];
+    filename = [fullfile('digits', 'testQPSK-'), num2str(snr), '.dat'];
     dlmwrite(filename, test_data, 'delimiter', '\t', 'newline', 'pc');
 end
