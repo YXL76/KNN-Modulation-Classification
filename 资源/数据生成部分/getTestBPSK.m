@@ -1,4 +1,5 @@
 %% Clean up
+clear;
 clc;
 
 rows = 1000;
