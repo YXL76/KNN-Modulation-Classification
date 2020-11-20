@@ -4,7 +4,7 @@ clc;
 
 rows = 10;
 length = 500;
-NFeatures = 5;
+NFeatures = 9;
 sample_data = zeros(rows, NFeatures + 1);
 
 %% Simulation parameters

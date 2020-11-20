@@ -3,7 +3,7 @@ clear;
 clc;
 
 rows = 1000;
-NFeatures = 5;
+NFeatures = 9;
 test_data = zeros(rows, NFeatures);
 SNR = (0:5:40);
 N = [200 500];
