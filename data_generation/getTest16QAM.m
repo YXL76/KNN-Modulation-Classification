@@ -5,29 +5,30 @@ clc;
 rows = 1000;
 NFeatures = 9;
 test_data = zeros(rows, NFeatures);
-SNR = (-4:2:10);
+SNR = (0:5:40);
 N = [200 500];
 
 for j = 1:length(N)
 
-    cols = N(j);
+    cols = N(j) * 4;
 
     for i = 1:length(SNR)
 
         %% Simulation parameters
-        M = 2;
+        M = 16;
         snr = SNR(i);
+
         %% Simulate
-        %BPSK
+        %16QAM
         % Generate random data
         data = randi([0 1], rows, cols);
 
-        % PSK 映射
+        % QAM 映射
         [data1] = data';
         data_cell = mat2cell(data1, cols, ones(1, rows));
-        signalData = cellfun(@(x) BPSKModulator(x), data_cell, 'UniformOutput', false);
+        signalData = cellfun(@(x) qammod(x, M, 'InputType', 'bit', 'UnitAveragePower', true), data_cell, 'UniformOutput', false);
         signalDataMat = cell2mat(signalData);
-        dataMod = mat2cell(signalDataMat', ones(1, rows), cols);
+        dataMod = mat2cell(signalDataMat', ones(1, rows), cols / 4);
 
         % AWGN 加噪
         dataRx = cellfun(@(x) awgn(x, snr), dataMod, 'UniformOutput', false);
@@ -48,7 +49,7 @@ for j = 1:length(N)
         end
 
         %% save
-        filename = [fullfile('digits', 'testBPSK-'), num2str(N(j)), '-', num2str(snr), '.dat'];
+        filename = [fullfile('..', 'data', 'test16QAM-'), num2str(N(j)), '-', num2str(snr), '.dat'];
         dlmwrite(filename, test_data, 'delimiter', '\t', 'newline', 'pc');
     end
 

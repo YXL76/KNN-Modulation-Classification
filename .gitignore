@@ -1,5 +1,4 @@
-资源/数据生成部分/digits/*.dat
-资源/调制识别部分/data/*.dat
+data/
 
 ### JupyterNotebooks template
 # gitignore template for Jupyter Notebooks

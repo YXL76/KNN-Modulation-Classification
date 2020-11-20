@@ -110,7 +110,7 @@ for row = 1:rows
     sample_data(row_r, NFeatures + 1) = 64;
 end
 
-filename = fullfile('digits', 'sample.dat');
+filename = fullfile('..', 'data', 'sample.dat');
 dlmwrite(filename, sample_data, 'delimiter', '\t', 'newline', 'pc');
 
 %csvwrite('sample.txt', sample_data);

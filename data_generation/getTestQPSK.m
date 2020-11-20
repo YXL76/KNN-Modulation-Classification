@@ -50,7 +50,7 @@ for j = 1:length(N)
         end
 
         %% save
-        filename = [fullfile('digits', 'testQPSK-'), num2str(N(j)), '-', num2str(snr), '.dat'];
+        filename = [fullfile('..', 'data', 'testQPSK-'), num2str(N(j)), '-', num2str(snr), '.dat'];
         dlmwrite(filename, test_data, 'delimiter', '\t', 'newline', 'pc');
     end
 
